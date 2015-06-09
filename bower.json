@@ -1,0 +1,21 @@
+{
+  "name": "Bzooml",
+  "version": "0.0.0",
+  "homepage": "https://github.com/janeczko/Bzooml",
+  "authors": [
+    "janeczko <janeczko.jan@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.4.0",
+    "requirejs": "~2.1.18",
+    "jquery": "~2.1.4"
+  }
+}
