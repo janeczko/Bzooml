@@ -1,6 +1,6 @@
 define ->
 
     angular.module 'themeModule'
-        .controller 'theme.homeController', ['$scope', ($scope) ->
+        .registerController 'theme.homeController', ['$scope', ($scope) ->
             $scope.title = 'This is THEME HomePage'
         ]
