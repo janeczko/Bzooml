@@ -1,6 +1,6 @@
 define ['modules/core/runners/logRunner', 'router'], (logRunner, Router) ->
 
-    coreModule = angular.module 'coreModule', ['ngRoute', 'themeModule']
+    coreModule = angular.module 'coreModule', ['ngRoute', 'ui.bootstrap', 'themeModule']
 
 
     coreModule.config Router.registerControllerConfig coreModule
@@ -11,7 +11,10 @@ define ['modules/core/runners/logRunner', 'router'], (logRunner, Router) ->
             .when '/',
                 controller: 'core.homeController'
                 templateUrl: 'app/modules/core/views/home.html'
-                resolve: Router.resolve ['modules/core/controllers/homeController', 'modules/core/directives/superMan']
+                resolve: Router.resolve [
+                    'modules/core/controllers/homeController'
+                    'modules/core/directives/superMan'
+                ]
 
             .when '/home',
                 controller: 'core.homeController'

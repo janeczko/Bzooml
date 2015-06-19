@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <title>Bžooml</title>
 
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="resources/css/bootflat.min.css"/>
     <link rel="stylesheet" href="resources/css/global.css"/>
 </head>
 <body ng-controller="mainController">
+    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+
     <div ng-view></div>
 
     <script src="bower_components/requirejs/require.js" data-main="app/main.js"></script>
