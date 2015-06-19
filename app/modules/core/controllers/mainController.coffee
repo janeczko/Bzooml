@@ -1,6 +1,6 @@
 define ->
 
     angular.module 'coreModule'
-        .controller 'mainController', ['$scope', ($scope) ->
+        .controller 'mainController', ['$rootScope', '$scope', ($rootScope, $scope) ->
 
         ]
