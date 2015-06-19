@@ -11,12 +11,12 @@ define ['modules/theme/runners/logRunner', 'router'], (logRunner, Router) ->
             .when '/theme',
                 controller: 'theme.themeController'
                 templateUrl: 'app/modules/theme/views/theme.html'
-                resolve: Router.resolveController 'theme', 'theme'
+                resolve: Router.resolve ['modules/theme/controllers/themeController']
 
             .when '/theme/home',
                 controller: 'theme.homeController'
                 templateUrl: 'app/modules/theme/views/home.html'
-                resolve: Router.resolveController 'theme', 'home'
+                resolve: Router.resolve ['modules/theme/controllers/homeController']
     ]
 
 

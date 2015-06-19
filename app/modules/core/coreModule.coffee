@@ -11,17 +11,17 @@ define ['modules/core/runners/logRunner', 'router'], (logRunner, Router) ->
             .when '/',
                 controller: 'core.homeController'
                 templateUrl: 'app/modules/core/views/home.html'
-                resolve: Router.resolveController 'core', 'home'
+                resolve: Router.resolve ['modules/core/controllers/homeController', 'modules/core/directives/superMan']
 
             .when '/home',
                 controller: 'core.homeController'
                 templateUrl: 'app/modules/core/views/home.html'
-                resolve: Router.resolveController 'core', 'home'
+                resolve: Router.resolve ['modules/core/controllers/homeController']
 
             .when '/test',
                 controller: 'core.testController'
                 templateUrl: 'app/modules/core/views/test.html'
-                resolve: Router.resolveController 'core', 'test'
+                resolve: Router.resolve ['modules/core/controllers/testController']
     ]
 
 

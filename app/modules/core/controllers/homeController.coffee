@@ -10,10 +10,3 @@ define ->
             address: '1600 Amphitheatre'
         };
     ]
-
-
-    core.directive 'superMan', ->
-        {
-            restrict: 'E'
-            template: '<div>Hello from Directive</div>'
-        }

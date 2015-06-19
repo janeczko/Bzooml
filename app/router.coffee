@@ -2,11 +2,11 @@ define ->
 
     class Router
 
-        @resolveController: (module, controller) ->
-            load: ['$q', ($q) ->
+        @resolve: (dependencies) ->
+            load: ['$q', '$rootScope', ($q, $rootScope) ->
                 defered = $q.defer()
 
-                require ["modules/#{module}/controllers/#{controller}Controller"], ->
+                require dependencies, ->
                     defered.resolve()
 
                 defered.promise
@@ -14,6 +14,7 @@ define ->
 
 
         @registerControllerConfig = (module) ->
-            ['$controllerProvider', ($controllerProvider) ->
+            ['$controllerProvider', '$compileProvider', ($controllerProvider, $compileProvider) ->
                 module.registerController = $controllerProvider.register
+                module.registerDirective = $compileProvider.directive
             ]
