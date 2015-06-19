@@ -1,18 +1,26 @@
 require.config
 
     paths:
+        "jquery": "../bower_components/jquery/dist/jquery.min"
         "angular": "../bower_components/angularjs/angular.min"
-        "app": "app"
-        "coreModule": "coreModule"
+        "angular-route": "../bower_components/angular-route/angular-route.min"
+
+        "coreModule": "modules/core/coreModule"
+        "themeModule": "modules/theme/themeModule"
 
     shim:
-        "app":
-            deps: ["angular", "coreModule"]
+        "angular":
+            deps: ["jquery"]
 
-        "coreModule":
+        "angular-route":
             deps: ["angular"]
 
+        "coreModule":
+            deps: ["angular-route", "themeModule"]
+
+        "themeModule":
+            deps: ["angular-route"]
 
 
-require ["app"], ->
-    angular.bootstrap document, ["app"]
+
+require ["coreModule"], ->
