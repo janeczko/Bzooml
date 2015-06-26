@@ -1,6 +1,6 @@
 define ['modules/core/runners/logRunner', 'router'], (logRunner, Router) ->
 
-    coreModule = angular.module 'coreModule', ['ngRoute', 'ui.bootstrap', 'themeModule']
+    coreModule = angular.module 'coreModule', ['ngRoute', 'themeModule']
 
 
     coreModule.config Router.registerControllerConfig coreModule

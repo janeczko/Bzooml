@@ -4,37 +4,35 @@ require.config
         "jquery": "../bower_components/jquery/dist/jquery.min"
         "angular": "../bower_components/angularjs/angular.min"
         "angular-route": "../bower_components/angular-route/angular-route.min"
-        "ui.bootstrap": "../resources/js/ui-bootstrap-custom-tpls-0.13.0.min"
-        "bootstrap": "../resources/js/bootstrap.min"
-        "jasny-bootstrap": "../resources/js/jasny-bootstrap.min"
+        "uikit": "../resources/js/uikit.min"
         "global": "../resources/js/global"
 
         "coreModule": "modules/core/coreModule"
         "themeModule": "modules/theme/themeModule"
 
     shim:
-        "global": ["jquery"]
+        "global":
+            deps: ["jquery"]
 
-        "bootstrap":
+        "uikit":
             deps: ["global"]
 
-        "jasny-bootstrap":
-            deps: ["bootstrap"]
-
         "angular":
-            deps: ["jasny-bootstrap"]
+            deps: ["uikit"]
 
         "angular-route":
             deps: ["angular"]
 
-        "ui.bootstrap":
-            deps: ["angular-route"]
-
         "coreModule":
-            deps: ["themeModule", "ui.bootstrap"]
+            deps: ["themeModule"]
 
         "themeModule":
-            deps: ["ui.bootstrap"]
+            deps: ["angular-route"]
+
+
+    config:
+        "uikit":
+            "base": "../resources/js"
 
 
 

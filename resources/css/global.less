@@ -1,0 +1,52 @@
+@import 'colors';
+@import 'responsive_widths';
+
+@page-padding-large-v: 40;
+@page-padding-large-h: 50;
+@page-padding-small: 10px;
+
+body {
+  position: relative;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+#page-wrapper {
+   min-height: ~"calc(100% - 40px)";
+}
+
+footer#footer {
+   background-color: #252525;
+   height: 20px;
+   padding: 10px;
+   font-size: 1.1em;
+}
+
+.PagePadding (@v, @h) {
+  #page {
+    padding: ~"@{v}px @{h}px";
+  }
+}
+
+#page {
+  padding: ~"@{page-padding-large-v}px @{page-padding-large-h}px";
+}
+
+@media screen and (min-width: ~"@{min-width-small}px") {
+   .PagePadding(@page-padding-large-v - 30, @page-padding-large-h - 40);
+}
+
+@media screen and (min-width: ~"@{min-width-medium}px") {
+   .PagePadding(@page-padding-large-v - 10, @page-padding-large-h - 20);
+}
+
+@media screen and (min-width: ~"@{min-width-large}px") {
+   .PagePadding(@page-padding-large-v - 5, @page-padding-large-h - 10);
+}
+
+@media screen and (min-width: ~"@{min-width-xlarge}px") {
+  .PagePadding(@page-padding-large-v, @page-padding-large-h);
+}
